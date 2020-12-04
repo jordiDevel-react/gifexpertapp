@@ -1,4 +1,8 @@
 const getGifs = async (category) => {
+  if (!category) {
+    throw new Error(`Category can't be null`);
+  }
+
   const giphyKey = 'rVqyoTpTg7QyFqWpneENlXIYy5oUJlVN';
   const limit = 10;
   const filter = encodeURI(category);

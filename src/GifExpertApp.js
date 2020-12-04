@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import AddCategory from './components/AddCategory';
 import GifGrid from './components/GifGrid';
 
-const GifExpertApp = () => {
-  const [categories, setCategories] = useState(['Dragon Ball']);
+const GifExpertApp = ({ defaultCategories }) => {
+  const [categories, setCategories] = useState(defaultCategories);
 
   return (
     <>
-      <h2>GifExpertApp Modificada</h2>
+      <h2>GifExpertApp</h2>
       <AddCategory setCategories={setCategories} />
       <hr />
 
@@ -18,6 +18,10 @@ const GifExpertApp = () => {
       </ol>
     </>
   );
+};
+
+GifExpertApp.defaultProps = {
+  defaultCategories: ['Dragon Ball'],
 };
 
 export default GifExpertApp;
